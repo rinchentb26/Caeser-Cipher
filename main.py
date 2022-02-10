@@ -19,11 +19,14 @@ print("Welcome to Caeser Cipher.")
 #loop that keeps program running until user enters "no"
 while(runProgram):
     choice=input("Type 'encode' to encrypt and 'decode' to decrypt\n").lower()
-    text=input("Type your message: ")
-    shift_amount=int(input("Type the shift number: "))
-    shift_amount%=26
-    cipher(plain_text=text,shift_amt=shift_amount,direction=choice)
-    runCheck=input("Do you wish to continue? Type 'yes' or 'no': ").lower()
-    if runCheck=="no":
-        runProgram=False
-        print("Adios.")
+    if choice=="encode" or choice=="decode":
+        text=input("Type your message: ")
+        shift_amount=int(input("Type the shift number: "))
+        shift_amount%=26
+        cipher(plain_text=text,shift_amt=shift_amount,direction=choice)
+        runCheck=input("Do you wish to continue? Type 'yes' or 'no': ").lower()
+        if runCheck=="no":
+            runProgram=False
+            print("Adios.")
+    else:
+        print("Oops, Invalid Input! Try Again")
