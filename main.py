@@ -20,7 +20,7 @@ print("Welcome to Caeser Cipher.")
 while(runProgram):
     choice=input("Type 'encode' to encrypt and 'decode' to decrypt\n").lower()
     if choice=="encode" or choice=="decode":
-        text=input("Type your message: ")
+        text=input("Type your message: ").lower()
         shift_amount=int(input("Type the shift number: "))
         shift_amount%=26
         cipher(plain_text=text,shift_amt=shift_amount,direction=choice)
